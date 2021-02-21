@@ -7,7 +7,7 @@ function combine1(arr1: number[], arr2: number[]) {
       newArr.push(combineArray[i]);
     }
   }
-  return newArr;
+  return newArr.sort((a, b) => a - b);
 }
 
 console.log(combine1([1, 2, 3], [3, 4, 5]));
@@ -21,3 +21,8 @@ const combine2 = (arr1: number[], arr2: number[]) => {
 };
 console.log(combine2([1, 2, 3], [3, 4, 5]));
 console.log(combine2([-10, 22, 333, 42], [-11, 5, 22, 41, 42]));
+
+// other solution jschallenger.com
+function myFunction(first, second) {
+  return [...new Set([...first, ...second])].sort((a, b) => a - b);
+}
